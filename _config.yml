@@ -21,3 +21,4 @@ github_username:  grozy
 
 # Build settings
 markdown: kramdown
+keep_files: [".git", "CNAME"]
