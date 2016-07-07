@@ -18,3 +18,6 @@ github_username:  grozy
 
 # Build settings
 markdown: kramdown
+
+jekyll-archives:
+  enable: all
