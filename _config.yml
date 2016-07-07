@@ -9,8 +9,7 @@
 title: 闲云野鹤
 email: ceo@objc.co
 description: > # this means to ignore newlines until "baseurl:"
-  一位懒散惯了的前iOS开发者，一个想成为Web开发者的人。可是懒散惯了就是懒散惯了，没有
-  办法学的深入，那就让我在表面好好地趴着吧- =。
+  一位懒散惯了的前iOS开发者，一个想成为Web开发者的人。可是懒散惯了就是懒散惯了，没有办法学的深入，那就让我在表面好好地趴着吧- =。
 baseurl: "" # the subpath of your site, e.g. /blog
 keep_files: [".git", "CNAME"]
 url: "http://objc.co" # the base hostname & protocol for your site
