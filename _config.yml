@@ -15,9 +15,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 keep_files: [".git", "CNAME"]
 url: "http://objc.co" # the base hostname & protocol for your site
-host:        192.168.31.201
-port:        4000
-twitter_username: jekyllrb
+
 github_username:  grozy
 
 # Build settings

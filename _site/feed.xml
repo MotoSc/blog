@@ -6,9 +6,33 @@
 </description>
     <link>http://objc.co/</link>
     <atom:link href="http://objc.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Jul 2016 00:31:34 +0800</pubDate>
-    <lastBuildDate>Fri, 08 Jul 2016 00:31:34 +0800</lastBuildDate>
+    <pubDate>Fri, 08 Jul 2016 01:27:25 +0800</pubDate>
+    <lastBuildDate>Fri, 08 Jul 2016 01:27:25 +0800</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>博客的第一篇文章</title>
+        <description>&lt;p&gt;终于把&lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;的博客放到了Github上，并绑定上了域名。一路上磕磕碰碰的，完全是一个不小心就设置成功了。&lt;/p&gt;
+
+&lt;p&gt;自打自己做开发以来，就一直想拥有一个自己的博客，主要是做一些IT的技术分享（为了方便找工作。。😄）。当时为了能体现出自己的技术，选择了各种各样的方式来建立自己的博客。从最早的新浪博客，其间依次更换了&lt;a href=&quot;http://blog.csdn.net/grozy_sun/&quot;&gt;CSDN&lt;/a&gt;,&lt;a href=&quot;http://my.oschina.net/9meo&quot;&gt;开源中国&lt;/a&gt;。后来开始使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Hexo&lt;/code&gt;写了一阵子的博客，不过后来为了还是觉得自己写才是真本事，开始尝试用&lt;code class=&quot;highlighter-rouge&quot;&gt;django&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;express&lt;/code&gt;开发博客，不过都因为&lt;code class=&quot;highlighter-rouge&quot;&gt;Nginx&lt;/code&gt;没弄明白，最后一只也没有放到服务器上。。&lt;/p&gt;
+
+&lt;p&gt;现在，我已经告别了自己两年的开发者生涯，成为了一名自由职业者（说不好听点儿就是无业有名了吧。。。）。写博客也脱离了初衷，不过也多亏了之前的瞎折腾。虽说学的都没有精通，不过不得不承认多学一些语言之后也有多学的好处，你会抓住学习新语言的重点，会帮助你更快的挺高学习一门新语言的能力。反正现在也不用再出去装了，那就随便选择一个工具来构建这个博客吧。&lt;/p&gt;
+
+&lt;p&gt;从今天开始，我的业余时间可能会越来越多。也可以把更多的时间投入到自己心爱的一个行业上，而不是把他当做工作，只是兴趣。&lt;/p&gt;
+
+&lt;p&gt;最后放上自家爱犬的一张图片
+&lt;img src=&quot;http://127.0.0.1:4000/images/2016-07-08/IMG_2484.JPG&quot; alt=&quot;Amy&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;这里只是个开始&lt;/h2&gt;
+</description>
+        <pubDate>Fri, 08 Jul 2016 00:36:15 +0800</pubDate>
+        <link>http://objc.co/%E6%9D%82%E8%B0%88/2016/07/08/the-first-post.html</link>
+        <guid isPermaLink="true">http://objc.co/%E6%9D%82%E8%B0%88/2016/07/08/the-first-post.html</guid>
+        
+        
+        <category>杂谈</category>
+        
+      </item>
     
       <item>
         <title>Welcome to Jekyll!</title>
