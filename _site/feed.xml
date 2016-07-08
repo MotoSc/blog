@@ -7,17 +7,20 @@
 </description>
     <link>http://objc.co/</link>
     <atom:link href="http://objc.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Jul 2016 19:20:34 +0800</pubDate>
-    <lastBuildDate>Fri, 08 Jul 2016 19:20:34 +0800</lastBuildDate>
+    <pubDate>Fri, 08 Jul 2016 19:24:51 +0800</pubDate>
+    <lastBuildDate>Fri, 08 Jul 2016 19:24:51 +0800</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
         <title>读书笔记《代码之髓：编程语言核心概念》 第三章</title>
         <description>&lt;h1 id=&quot;section&quot;&gt;第三章 语法的诞生&lt;/h1&gt;
 
-&lt;p&gt;&lt;em&gt;语法就是程序语言设计者规定的解释程序编写方式的一系列规则。&lt;/em&gt;
-- 运算符优先级，1+2&lt;em&gt;3，早期有计算器计算结果为9，也就是(1+2)&lt;/em&gt;3的执行顺序。而现在大家使用的程序设计语言大多数的计算结果都应该是其。这因为程序设计者制定了乘法优先级高于加法优先级这一规则。因为这和四则运算的法则是一样的。
-- 运算顺序，对于9/3/3，是9/(3/3)还是(9/3)/3。大部分语言都是(9/3)/3来计算的。这是因为程序设计者制定了这样的规则：在做结合运算符号除号出现并列的情况下，运算从左开始计算。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;语法就是程序语言设计者规定的解释程序编写方式的一系列规则。&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;运算符优先级，1+2&lt;em&gt;3，早期有计算器计算结果为9，也就是(1+2)&lt;/em&gt;3的执行顺序。而现在大家使用的程序设计语言大多数的计算结果都应该是其。这因为程序设计者制定了乘法优先级高于加法优先级这一规则。因为这和四则运算的法则是一样的。&lt;/li&gt;
+  &lt;li&gt;运算顺序，对于9/3/3，是9/(3/3)还是(9/3)/3。大部分语言都是(9/3)/3来计算的。这是因为程序设计者制定了这样的规则：在做结合运算符号除号出现并列的情况下，运算从左开始计算。&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;section-1&quot;&gt;语法是语言设计者指定的规则&lt;/h3&gt;
 
@@ -33,11 +36,12 @@
 
 &lt;h3 id=&quot;lisp&quot;&gt;语法树和LISP语言&lt;/h3&gt;
 
-&lt;p&gt;FORTH语言不需要使用括号或者优先次序就可以表达算顺序。现实中，有的语言总是需要用括号标示完整的意思单元，如1958年的LISP语言,1加2用代码标示为：
-&lt;code class=&quot;highlighter-rouge&quot;&gt;lisp
-(+ 1 2) //首先是括号，接着是加号命令，用空格分割后，跟上进行相加运算额对象。
-&lt;/code&gt;
-计算的流程 (* (+ 1 2) 3) =&amp;gt; (1 + 2) * 3
+&lt;p&gt;FORTH语言不需要使用括号或者优先次序就可以表达算顺序。现实中，有的语言总是需要用括号标示完整的意思单元，如1958年的LISP语言,1加2用代码标示为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-lisp&quot;&gt;(+ 1 2) //首先是括号，接着是加号命令，用空格分割后，跟上进行相加运算额对象。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;计算的流程 (* (+ 1 2) 3) =&amp;gt; (1 + 2) * 3
 - 1.先做 1与2相加，得到式子A
 - 2.将式子A与3相乘
 - 3.把A等于1与2的和这个式子带入到过程2中。这样的过程称作为语法树。（式子A就是？）
