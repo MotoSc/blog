@@ -7,8 +7,8 @@
 </description>
     <link>http://objc.co/</link>
     <atom:link href="http://objc.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Jul 2016 19:24:51 +0800</pubDate>
-    <lastBuildDate>Fri, 08 Jul 2016 19:24:51 +0800</lastBuildDate>
+    <pubDate>Fri, 08 Jul 2016 19:27:16 +0800</pubDate>
+    <lastBuildDate>Fri, 08 Jul 2016 19:27:16 +0800</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
@@ -38,8 +38,7 @@
 
 &lt;p&gt;FORTH语言不需要使用括号或者优先次序就可以表达算顺序。现实中，有的语言总是需要用括号标示完整的意思单元，如1958年的LISP语言,1加2用代码标示为：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-lisp&quot;&gt;(+ 1 2) //首先是括号，接着是加号命令，用空格分割后，跟上进行相加运算额对象。
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-lisp&quot; data-lang=&quot;lisp&quot;&gt;(+ 1 2) //首先是括号，接着是加号命令，用空格分割后，跟上进行相加运算额对象。&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;计算的流程 (* (+ 1 2) 3) =&amp;gt; (1 + 2) * 3
 - 1.先做 1与2相加，得到式子A
