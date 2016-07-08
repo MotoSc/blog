@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Welcome to Jekyll!</title>
-  <meta name="description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...">
+  <title>读书笔记《代码之髓：编程语言核心概念》</title>
+  <meta name="description" content="第一章 如何高效地学习语言">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://objc.co/jekyll/update/2016/07/07/welcome-to-jekyll.html">
+  <link rel="canonical" href="http://objc.co/2016/07/08/reader-code-spirit_1.html">
   <link rel="alternate" type="application/rss+xml" title="闲云野鹤" href="http://objc.co/feed.xml">
 </head>
 
@@ -61,34 +61,45 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Welcome to Jekyll!</h1>
-    <p class="post-meta"><time datetime="2016-07-07T17:57:09+08:00" itemprop="datePublished">Jul 7, 2016</time></p>
+    <h1 class="post-title" itemprop="name headline">读书笔记《代码之髓：编程语言核心概念》</h1>
+    <p class="post-meta"><time datetime="2016-07-08T12:12:24+08:00" itemprop="datePublished">Jul 8, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+    <h2 id="section">第一章 如何高效地学习语言</h2>
 
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<h3 id="section-1">在比较中学习</h3>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<p>多学几门语言，在比较中去学习。接触的语言多了之后，可以发现什么地方是两种语言共通的，什么地方是每种独有的。</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<p>语言不同，规则不同</p>
 
-<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<p>编程语言中的规则各式各样。这些规则不具有普遍的意义，只是当前场景这样做可能更方便，如<code class="highlighter-rouge">C</code>语言和<code class="highlighter-rouge">Ruby</code>语言中的真假值(<code class="highlighter-rouge">C</code>语言，<code class="highlighter-rouge">0</code>为假，其余为真。<code class="highlighter-rouge">ruby</code>中<code class="highlighter-rouge">0</code>为真)。<code class="highlighter-rouge">Java</code>中有真假值这一数据类型，在做条件判断的时候必须使用这种类型（我的天哪，头回听说。。）。因为0为整形不是真假值类型，如若以<code class="highlighter-rouge">0</code>为判断条件会发生编译错误。</p>
 
+<blockquote>
+  <p>总结:
+1.多种语言共通的知识才是要点。掌握了这些要点，学习其它语言才会更加轻松。
+2.<code class="highlighter-rouge">0</code>为真、<code class="highlighter-rouge">0</code>为假、<code class="highlighter-rouge">0</code>即非真即非假的语言都是存在的。</p>
+</blockquote>
+
+<h3 id="section-2">在历史中学习</h3>
+
+<p>理解语言设计者的意图，了解语言诞生的历史背景和应用场景。设计者为何创造了这种语言，以及语言的历史变迁。这些知识都能方便我们了解这些语言更适合去做什么，有什么功能适合我们去用它来做什么工作。</p>
+
+<p>了解语言之后，可以根据自己的需求有选择的学习。不过有时某种语言的热门程度也是大家选择它的主要原因。每种语言都可能有兴盛有衰弱，所以根据比较不同语言、了解语言的历史和变化的原因，培养对不同语言的理解能力是非常重要的。</p>
+
+<blockquote>
+  <p>小结: 学习语言的两种方法:<code class="highlighter-rouge">在比较中学习</code>和<code class="highlighter-rouge">在历史中学习</code>。其中<code class="highlighter-rouge">在比较重学习</code>不特指某种语言的编程，而是同时比较集中语言。从而掌握知识的重点，哪些知识是共通的，哪些是不同的。  <code class="highlighter-rouge">在历史中学习</code>指的是探寻语言的变化，在变化前存在哪些问题，从而理解语言为何开发出各种新的功能。</p>
+</blockquote>
 
   </div>
 
 </article>
 <!-- 多说评论框 start -->
 <div class="ds-thread"
-   data-thread-key="/jekyll/update/2016/07/07/welcome-to-jekyll"
-   data-title="Welcome to Jekyll!"
-   data-url="http://objc.co/jekyll/update/2016/07/07/welcome-to-jekyll.html">
+   data-thread-key="/2016/07/08/reader-code-spirit_1"
+   data-title="读书笔记《代码之髓：编程语言核心概念》"
+   data-url="http://objc.co/2016/07/08/reader-code-spirit_1.html">
 </div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
