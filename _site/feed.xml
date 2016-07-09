@@ -7,13 +7,16 @@
 </description>
     <link>http://objc.co/</link>
     <atom:link href="http://objc.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Jul 2016 11:40:12 +0800</pubDate>
-    <lastBuildDate>Sat, 09 Jul 2016 11:40:12 +0800</lastBuildDate>
+    <pubDate>Sat, 09 Jul 2016 11:43:00 +0800</pubDate>
+    <lastBuildDate>Sat, 09 Jul 2016 11:43:00 +0800</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
-        <title>the big boss repo</title>
-        <description>
+        <title>苹果BigBoss源的安装</title>
+        <description>&lt;p&gt;由于不小心，把之前安装过的&lt;code class=&quot;highlighter-rouge&quot;&gt;BigBoss&lt;/code&gt;源删掉了。结果导致有大量的插件不能安装和使用，上网一搜才知道有很多插件是依赖这个源的。本想怎么删就怎么装回来吧。再添加源里输入了&lt;code class=&quot;highlighter-rouge&quot;&gt;http://apt.thebigboss.org/profiles/cydia&lt;/code&gt;,结果提示我版本装不了。。&lt;/p&gt;
+
+&lt;p&gt;后来在威锋上面翻了一下，说是在Cydia中的第一个Tab中，点击更多就行了，里面会有BigBoss。果然，我看了一眼，还真下下来了。
+&lt;img src=&quot;http://objc.co/images/2016-07-09/the-big-boss.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 09 Jul 2016 11:30:39 +0800</pubDate>
         <link>http://objc.co/2016/07/09/the-big-boss-repo.html</link>
