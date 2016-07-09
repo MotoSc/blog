@@ -7,9 +7,20 @@
 </description>
     <link>http://objc.co/</link>
     <atom:link href="http://objc.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Jul 2016 09:27:06 +0800</pubDate>
-    <lastBuildDate>Sat, 09 Jul 2016 09:27:06 +0800</lastBuildDate>
+    <pubDate>Sat, 09 Jul 2016 11:40:12 +0800</pubDate>
+    <lastBuildDate>Sat, 09 Jul 2016 11:40:12 +0800</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>the big boss repo</title>
+        <description>
+</description>
+        <pubDate>Sat, 09 Jul 2016 11:30:39 +0800</pubDate>
+        <link>http://objc.co/2016/07/09/the-big-boss-repo.html</link>
+        <guid isPermaLink="true">http://objc.co/2016/07/09/the-big-boss-repo.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>读书笔记《代码之髓：编程语言核心概念》 第三章</title>
