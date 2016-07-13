@@ -7,9 +7,90 @@
 </description>
     <link>http://objc.co/</link>
     <atom:link href="http://objc.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Jul 2016 11:43:00 +0800</pubDate>
-    <lastBuildDate>Sat, 09 Jul 2016 11:43:00 +0800</lastBuildDate>
+    <pubDate>Wed, 13 Jul 2016 17:41:28 +0800</pubDate>
+    <lastBuildDate>Wed, 13 Jul 2016 17:41:28 +0800</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>读书笔记《代码之髓：编程语言核心概念》 第五章</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;第五章 函数&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;函数的作用&lt;/h2&gt;
+
+&lt;p&gt;函数，即把代码的一部分视作有机整体，然后切分出来并为之命名的涉及机制&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这种机制在不同时期和不同语言中，叫法不同，如事务、程序、子程序等。大部分人习惯称它为“函数”。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;便于理解&lt;/h3&gt;
+
+&lt;p&gt;通过把代码分割成多个代码段，把每一个函数是做一个整体并为之命名，这就是函数。代码量比较少的情况下，很容易掌握每一行执行的功能，正割函数的功能。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;便于再利用&lt;/h3&gt;
+
+&lt;p&gt;将数十行、百行代码作为函数，通过简单地调用就能使用它的功能。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;程序中再利用的特征&lt;/h3&gt;
+
+&lt;p&gt;相同操作的事情，只需要实现一次。通过把反复执行的操作封装成函数，进而多次调用，可以确保代码紧凑清晰。&lt;/p&gt;
+
+&lt;p&gt;把相同的代码封装在一起的好处不仅仅在于使用程序更简短，也在于能使阅读程序的人无需反复的读取相同内容的源代码。从冗长的程序中切分反复使用的代码将其封装成一个整体。程序就更容易理解了。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;返回命令&lt;/h2&gt;
+
+&lt;p&gt;返回指令，进入函数前记录当前位置，之后碰到返回语句时又能跳转到记录位置后面的语句。有了返回原来位置的命令，代码再利用就成为了可能。一个程序中有几处执行相同操作时，就可以把这些操作封装在一个地方。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;函数的诞生&lt;/h3&gt;
+
+&lt;p&gt;早在1949年就有反复利用封装命令的技术。但是当时的实现，是通过修改程序跳转命令的目的地来实现的返回原来位置。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;小知识：有返回值的代码段叫函数，没有返回值的叫子程序。代码之髓统称为函数&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-7&quot;&gt;记录跳转目的地的专用内存&lt;/h3&gt;
+
+&lt;p&gt;在调用函数之前修改返回命令的跳转目的地时，函数调用者必须同时知道跳转目的地在哪里和返回命令在哪里。这个很难实现。假如函数中增加了几行代码，返回命令的位置就会相应地往后挪。这样就不得不修改调用这一函数的全部代码。后来，创建用来事先记录返回目的地的内存空间，并设计能够跳转到该内存空间里记录的地址命令。这样，即时函数调用前不知道返回命令所在地也没关系。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1：将3写入返回目的地内存&lt;/li&gt;
+  &lt;li&gt;2：调用函数（跳转至100）&lt;/li&gt;
+  &lt;li&gt;3：下一命令&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+  &lt;li&gt;100：函数操作&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+  &lt;li&gt;101：返回至返回目的地内存所记录的地址&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;函数命名&lt;/code&gt;，便于理解的字符串取代数值，来表示操作开始时内存的位置。和变量一样。变量的诞生，就是为了用字符串代替数值来表示存储了某个数值的内存位置。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-8&quot;&gt;栈&lt;/h3&gt;
+&lt;p&gt;栈是一种存储了多个值的数据结构，实现最后被存入的值最先被读取。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;随着程序越来越大，把握全局逐渐变得困难。同时，有可能需要多次用到相似的操作。函数就是为了解决这个问题产生的。通过语义上把一块块代码切分出来为之命名，理解这段代码会更加容易。此外，通过在其他地方调用这个函数，实现了再利用。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Wed, 13 Jul 2016 17:39:53 +0800</pubDate>
+        <link>http://objc.co/2016/07/13/reader-code-spirit_4.html</link>
+        <guid isPermaLink="true">http://objc.co/2016/07/13/reader-code-spirit_4.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>test</title>
+        <description>
+</description>
+        <pubDate>Wed, 13 Jul 2016 17:38:59 +0800</pubDate>
+        <link>http://objc.co/2016/07/13/test.html</link>
+        <guid isPermaLink="true">http://objc.co/2016/07/13/test.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>苹果BigBoss源的安装</title>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>读书笔记《代码之髓：编程语言核心概念》 第五章</title>
+  <meta name="description" content="第五章 函数">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://objc.co/2016/07/13/reader-code-spirit_4.html">
+  <link rel="alternate" type="application/rss+xml" title="闲云野鹤" href="http://objc.co/feed.xml">
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?70ed67da2a30d7b8a50ff9a2019c91b6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">闲云野鹤</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/life/">Life</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">读书笔记《代码之髓：编程语言核心概念》 第五章</h1>
+    <p class="post-meta"><time datetime="2016-07-13T17:39:53+08:00" itemprop="datePublished">Jul 13, 2016</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="section">第五章 函数</h1>
+
+<h2 id="section-1">函数的作用</h2>
+
+<p>函数，即把代码的一部分视作有机整体，然后切分出来并为之命名的涉及机制</p>
+
+<blockquote>
+  <p>这种机制在不同时期和不同语言中，叫法不同，如事务、程序、子程序等。大部分人习惯称它为“函数”。</p>
+</blockquote>
+
+<h3 id="section-2">便于理解</h3>
+
+<p>通过把代码分割成多个代码段，把每一个函数是做一个整体并为之命名，这就是函数。代码量比较少的情况下，很容易掌握每一行执行的功能，正割函数的功能。</p>
+
+<h3 id="section-3">便于再利用</h3>
+
+<p>将数十行、百行代码作为函数，通过简单地调用就能使用它的功能。</p>
+
+<h3 id="section-4">程序中再利用的特征</h3>
+
+<p>相同操作的事情，只需要实现一次。通过把反复执行的操作封装成函数，进而多次调用，可以确保代码紧凑清晰。</p>
+
+<p>把相同的代码封装在一起的好处不仅仅在于使用程序更简短，也在于能使阅读程序的人无需反复的读取相同内容的源代码。从冗长的程序中切分反复使用的代码将其封装成一个整体。程序就更容易理解了。</p>
+
+<h2 id="section-5">返回命令</h2>
+
+<p>返回指令，进入函数前记录当前位置，之后碰到返回语句时又能跳转到记录位置后面的语句。有了返回原来位置的命令，代码再利用就成为了可能。一个程序中有几处执行相同操作时，就可以把这些操作封装在一个地方。</p>
+
+<h3 id="section-6">函数的诞生</h3>
+
+<p>早在1949年就有反复利用封装命令的技术。但是当时的实现，是通过修改程序跳转命令的目的地来实现的返回原来位置。</p>
+
+<blockquote>
+  <p>小知识：有返回值的代码段叫函数，没有返回值的叫子程序。代码之髓统称为函数</p>
+</blockquote>
+
+<h3 id="section-7">记录跳转目的地的专用内存</h3>
+
+<p>在调用函数之前修改返回命令的跳转目的地时，函数调用者必须同时知道跳转目的地在哪里和返回命令在哪里。这个很难实现。假如函数中增加了几行代码，返回命令的位置就会相应地往后挪。这样就不得不修改调用这一函数的全部代码。后来，创建用来事先记录返回目的地的内存空间，并设计能够跳转到该内存空间里记录的地址命令。这样，即时函数调用前不知道返回命令所在地也没关系。</p>
+
+<ul>
+  <li>1：将3写入返回目的地内存</li>
+  <li>2：调用函数（跳转至100）</li>
+  <li>3：下一命令</li>
+  <li>…</li>
+  <li>100：函数操作</li>
+  <li>…</li>
+  <li>101：返回至返回目的地内存所记录的地址</li>
+</ul>
+
+<blockquote>
+  <p><code class="highlighter-rouge">函数命名</code>，便于理解的字符串取代数值，来表示操作开始时内存的位置。和变量一样。变量的诞生，就是为了用字符串代替数值来表示存储了某个数值的内存位置。</p>
+</blockquote>
+
+<h3 id="section-8">栈</h3>
+<p>栈是一种存储了多个值的数据结构，实现最后被存入的值最先被读取。</p>
+
+<blockquote>
+  <p>随着程序越来越大，把握全局逐渐变得困难。同时，有可能需要多次用到相似的操作。函数就是为了解决这个问题产生的。通过语义上把一块块代码切分出来为之命名，理解这段代码会更加容易。此外，通过在其他地方调用这个函数，实现了再利用。</p>
+</blockquote>
+
+  </div>
+
+</article>
+<!-- 多说评论框 start -->
+<div class="ds-thread"
+   data-thread-key="/2016/07/13/reader-code-spirit_4"
+   data-title="读书笔记《代码之髓：编程语言核心概念》 第五章"
+   data-url="http://objc.co/2016/07/13/reader-code-spirit_4.html">
+</div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"objc"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">闲云野鹤</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>闲云野鹤</li>
+          <li><a href="mailto:ceo@objc.co">ceo@objc.co</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/grozy"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">grozy</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>一位懒散惯了的前iOS开发者，一个想成为Web开发者的人。可是懒散惯了就是懒散惯了，没有办法学的深入，那就让我在表面好好地趴着吧- =。
+</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>
