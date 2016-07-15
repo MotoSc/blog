@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>test</title>
-  <meta name="description" content="">
+  <title>读书笔记《代码之髓：编程语言核心概念》 第六章</title>
+  <meta name="description" content="第六章 错误处理程序在执行过程中也有可能出错，出错时如何处理（错误处理）很重要。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://objc.co/2016/07/13/test.html">
+  <link rel="canonical" href="http://objc.co/2016/07/15/reader-code-spirit_5.html">
   <link rel="alternate" type="application/rss+xml" title="闲云野鹤" href="http://objc.co/feed.xml">
   <script>
   var _hmt = _hmt || [];
@@ -71,21 +71,84 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">test</h1>
-    <p class="post-meta"><time datetime="2016-07-13T17:38:59+08:00" itemprop="datePublished">Jul 13, 2016</time></p>
+    <h1 class="post-title" itemprop="name headline">读书笔记《代码之髓：编程语言核心概念》 第六章</h1>
+    <p class="post-meta"><time datetime="2016-07-15T16:51:38+08:00" itemprop="datePublished">Jul 15, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    
+    <h1 id="section">第六章 错误处理</h1>
+<p>程序在执行过程中也有可能出错，出错时如何处理（错误处理）很重要。</p>
+
+<p>错误处理的方法大体可分为两种:。</p>
+
+<ul>
+  <li>使用返回值</li>
+  <li>使用异常</li>
+</ul>
+
+<h2 id="section-1">程序也会出错</h2>
+
+<p>在文件写入时，如果磁盘空间不足写入操作就会失败。程序的出错也一样。写入文件时，如果没有任何警告，用户难以察觉。用户可能会误以为这些非常重要的数据已经成功写入磁盘中，从而删除了原始数据，所以程序设计语言需要具备一种错误的检测和传达机制。抛出错误的作用，是在检测险情并报警，在造成不堪设想的大灾难前做出处理。</p>
+
+<h2 id="section-2">如何传达错误</h2>
+
+<h3 id="section-3">通过返回值传达出错误信息</h3>
+
+<p><code class="highlighter-rouge">func</code>函数事先将返回值定义为成功执行时返回<code class="highlighter-rouge">0</code>,出错时返回<code class="highlighter-rouge">0</code>以外的值。函数调用方在调用func函数后，会检查其返回值，返回值非<code class="highlighter-rouge">0</code>时会进行错误处理。</p>
+
+<pre><code class="language-C">if (func()){
+    /*错误处理*/
+}
+</code></pre>
+<p>也就是说，出错时把信息写入返回值，接着做返回值检查。与之相类似的有先行定义全局变量接收错误信息的方法。也就是说，出错时把信息写入返回值，接着做返回值检查。与之相反类似的有先行定义全局变量接收错误信息的方法，还有在函数调用方定义变量作为引用形参接受错误信息的方法。</p>
+
+<p>以上两种方法在<code class="highlighter-rouge">C</code>语言中广泛使用，但是有两个问题:
+1. 错误遗漏：忘记对返回值做错误检查，从而错过了错误。粗心大意可能导致忘记返回值检测可能出错。如此，检测函数调用完没有对返回值做检查，按照执行成功的固定思维进行编码。
+2. 错误处理导致代码可读性下降：对所有函数调用都仔细做检查以免漏错，然后着手编写错误处理代码，由于处理，源代码会变得越来越难读懂。</p>
+
+<pre><code class="language-C">int main(){
+    if(func('a')){
+        /* 失败时的错误处理 */
+    } else if(func('b')) {
+        /* 失败时的错误处理 */
+    } else if(func('c')) {
+        /* 失败时的错误处理 */
+    }
+    ...
+    else {
+        /* 失败时的错误处理 */
+    }
+}
+</code></pre>
+
+<p>优化操作：通过跳转集中进行错误处理。</p>
+
+<pre><code class="language-C">int main(){
+    if(!func('a')) goto ERROR;
+    if(!func('b')) goto ERROR;
+    if(!func('c')) goto ERROR;
+    return;
+    ERROR:
+    /* 失败时的错误处理 */
+}
+</code></pre>
+
+<h3 id="section-4">出错则跳转</h3>
+
+<p>这种方法事先定义好错误发生时跳转的位置，后来演变成了现在的异常处理。</p>
+
+<blockquote>
+  <p>过去不叫失败或异常，叫条件(condition)。另外，抛出异常的命令也不是现在一般的raise或throw，而是signal。</p>
+</blockquote>
 
   </div>
 
 </article>
 <!-- 多说评论框 start -->
 <div class="ds-thread"
-   data-thread-key="/2016/07/13/test"
-   data-title="test"
-   data-url="http://objc.co/2016/07/13/test.html">
+   data-thread-key="/2016/07/15/reader-code-spirit_5"
+   data-title="读书笔记《代码之髓：编程语言核心概念》 第六章"
+   data-url="http://objc.co/2016/07/15/reader-code-spirit_5.html">
 </div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
